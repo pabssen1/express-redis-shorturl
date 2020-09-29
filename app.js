@@ -42,7 +42,7 @@ app.get("/:id", function (req, res, next) {
 });
 
 app.post("/shorten", function (req, res, next) {
-  let id = nanoid.nanoid();
+  let id = nanoid.nanoid(6);
   let main_url = req.body.main_url;
 
   client.hmset(id, ["main_url", main_url], function (err, reply) {
