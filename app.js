@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const redis = require("redis");
 const nanoid = require("nanoid");
+var cors = require("cors");
 
 const redisPassword = "NJlcDM0uwHgppJAQgBZIGjDG9WEJIAI2";
 const dbURL =
@@ -22,7 +23,7 @@ console.log(port);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
-
+app.use(cors());
 // Get redirect url
 app.get("/:id", function (req, res, next) {
   console.log(req.params.id);
