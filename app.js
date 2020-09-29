@@ -10,10 +10,7 @@ const dbURL =
   "redis://redis-10679.c212.ap-south-1-1.ec2.cloud.redislabs.com:10679";
 
 //Redis Client
-let client = redis.createClient({
-  url: dbURL,
-  auth_pass: redisPassword
-});
+let client = redis.createClient(process.env.REDIS_URL);
 
 client.on("connect", function () {
   console.log("Connected to Redis...");
