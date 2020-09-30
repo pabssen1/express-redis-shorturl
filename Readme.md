@@ -3,22 +3,22 @@
 ![](https://shortr.dsen.tech/img/logo.afafeb6b.svg)
 
 
-##Project Details
+## Project Details
 
-####Project Setup
+#### Project Setup
 
 `$ npm install `
 
 `$ npm start `
 
-###API Endpoints
+### API Endpoints
                     
-| Endpoint | Description                    | Returns
-| ------------- | ------------------------------ |
+Endpoints | Description | Returns |
+------------ | ------------- | ------- |
 | get : `/:id`      | Retrieve the url to redirect to.       | `{redirectUrl:(url)}`
 | post : `/shorten`    |  Generate a shortlink     | `{shortId : (generated short id)}`
 
-###Roadmap
+### Roadmap
 
 - [x] Retrieve Link
 - [x] Add link
@@ -29,3 +29,4 @@
 - [ ] Firebase Auth
     - [ ] Save all analytics data
     - [ ] Store all generated shortlinks
+ 
