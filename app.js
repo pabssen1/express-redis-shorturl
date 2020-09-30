@@ -47,7 +47,8 @@ app.post("/shorten", function (req, res, next) {
       console.log(err);
     } else {
       res.send({
-        shortId: id
+        shortId: id,
+        redirectUrl: main_url
       });
     }
     console.log(reply);
