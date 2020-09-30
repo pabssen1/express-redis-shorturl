@@ -6,10 +6,6 @@ const redis = require("redis");
 const nanoid = require("nanoid");
 var cors = require("cors");
 
-const redisPassword = "NJlcDM0uwHgppJAQgBZIGjDG9WEJIAI2";
-const dbURL =
-  "redis://redis-10679.c212.ap-south-1-1.ec2.cloud.redislabs.com:10679";
-
 //Redis Client
 let client = redis.createClient(process.env.REDIS_URL);
 
