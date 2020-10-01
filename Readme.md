@@ -27,6 +27,6 @@ $ npm start
   - [x] Click count
   - [ ] Browser Insights
   - [ ] Traffic
-- [ ] Firebase Auth
-  - [ ] Connect Anonymous account while user signup
+- [x] Firebase Auth
+  - [x] Connect Anonymous account while user signup
   - [x] Store all generated shortlinks
