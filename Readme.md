@@ -2,13 +2,9 @@
 
 ![](https://shortr.dsen.tech/img/logo.afafeb6b.svg)
 
-<<<<<<< HEAD
-##Project Details
-=======
+# ##Project Details
 
 ## Project Details
-
-> > > > > > > 5560e3afcbbd0c311065f8b9a452299a8d932ea4
 
 #### Project Setup
 
