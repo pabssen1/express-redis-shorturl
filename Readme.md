@@ -2,22 +2,29 @@
 
 ![](https://shortr.dsen.tech/img/logo.afafeb6b.svg)
 
+<<<<<<< HEAD
 ##Project Details
+=======
 
-####Project Setup
+## Project Details
+
+> > > > > > > 5560e3afcbbd0c311065f8b9a452299a8d932ea4
+
+#### Project Setup
 
 `$ npm install `
 
 `$ npm start `
 
-###API Endpoints
+### API Endpoints
 
-| Endpoint          | Description                      | Returns                            |
-| ----------------- | -------------------------------- | ---------------------------------- |
-| get : `/:id`      | Retrieve the url to redirect to. | `{redirectUrl:(url)}`              |
-| post : `/shorten` | Generate a shortlink             | `{shortId : (generated short id)}` |
+| Endpoints            | Description                                  | Returns                            |
+| -------------------- | -------------------------------------------- | ---------------------------------- |
+| get : `/:id`         | Retrieve the url to redirect to.             | `{redirectUrl:(url)}`              |
+| post : `/url/add`    | Generate a shortlink                         | `{shortId : (generated short id)}` |
+| post : `/url/update` | Update original link of a provided shortlink | `{shortId : (generated short id)}` |
 
-###Roadmap
+### Roadmap
 
 - [x] Retrieve Link
 - [x] Add link
