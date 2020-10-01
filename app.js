@@ -31,7 +31,7 @@ app.get("/:id", function (req, res, next) {
         }
       });
     } else {
-      //obj.id = req.params.id;
+      obj.id = req.params.id;
       console.log(obj);
       let url = obj.main_url;
       let urlString = url.toString();
@@ -44,23 +44,27 @@ app.post("/url/add", function (req, res, next) {
   let id = nanoid.nanoid(6);
   let main_url = req.body.main_url;
   main_url = addhttp(main_url);
-  client.hmset(id, ["main_url", main_url], function (err, reply) {
-    if (err) {
-      console.error(err);
-    } else {
-      res.send({
-        shortId: id,
-        redirectUrl: main_url
-      });
-    }
-    console.log(reply);
-  });
+  setURL(id, main_url);
 });
 
 app.post("/url/update", function (req, res, next) {
   let id = req.body.id;
   let main_url = req.body.main_url;
   main_url = addhttp(main_url);
+  setURL(id, main_url);
+});
+
+app.listen(port);
+
+//helper functions
+function addhttp(url) {
+  if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
+    url = "http://" + url;
+  }
+  return url;
+}
+
+function setURL(id, main_url) {
   client.hmset(id, ["main_url", main_url], function (err, reply) {
     if (err) {
       console.error(err);
@@ -72,12 +76,4 @@ app.post("/url/update", function (req, res, next) {
     }
     console.log(reply);
   });
-});
-
-app.listen(port);
-function addhttp(url) {
-  if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
-    url = "http://" + url;
-  }
-  return url;
 }
