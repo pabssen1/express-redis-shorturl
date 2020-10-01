@@ -25,11 +25,13 @@ app.get("/:id", function (req, res, next) {
   console.log(req.params.id);
   client.hgetall(req.params.id, function (err, obj) {
     if (!obj) {
-      res.send({
-        error: "URL does not exist"
+      res.status(400).send({
+        error: {
+          message: "URL does not exist"
+        }
       });
     } else {
-      obj.id = req.params.id;
+      //obj.id = req.params.id;
       console.log(obj);
       let url = obj.main_url;
       let urlString = url.toString();
@@ -44,7 +46,7 @@ app.post("/url/add", function (req, res, next) {
   main_url = addhttp(main_url);
   client.hmset(id, ["main_url", main_url], function (err, reply) {
     if (err) {
-      console.log(err);
+      console.error(err);
     } else {
       res.send({
         shortId: id,
@@ -52,7 +54,6 @@ app.post("/url/add", function (req, res, next) {
       });
     }
     console.log(reply);
-    console.log(id);
   });
 });
 
@@ -62,7 +63,7 @@ app.post("/url/update", function (req, res, next) {
   main_url = addhttp(main_url);
   client.hmset(id, ["main_url", main_url], function (err, reply) {
     if (err) {
-      console.log(err);
+      console.error(err);
     } else {
       res.send({
         shortId: id,
@@ -70,7 +71,6 @@ app.post("/url/update", function (req, res, next) {
       });
     }
     console.log(reply);
-    console.log(id);
   });
 });
 
