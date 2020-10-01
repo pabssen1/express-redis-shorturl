@@ -19,7 +19,7 @@ $ npm start
 | post : `/url/add`    | Generate a shortlink                         | `{shortId : (generated short id)}` |
 | post : `/url/update` | Update original link of a provided shortlink | `{shortId : (generated short id)}` |
 
-### Roadmap
+### TODO
 
 - [x] Retrieve Link
 - [x] Add link
