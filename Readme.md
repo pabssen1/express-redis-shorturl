@@ -7,11 +7,10 @@
 ## Project Details
 
 #### Project Setup
-
-`$ npm install `
-
-`$ npm start `
-
+```
+$ npm install
+$ npm start 
+```
 ### API Endpoints
 
 | Endpoints            | Description                                  | Returns                            |
